@@ -30,7 +30,7 @@ def main():
         """SAI ML App """
         st.title("SAI ML APP")
         import pandas as pd
-        df=pd.read_csv("C:/Users/Sai Tej/Insurance Web App/Diamonds_rate_prediction App/diamond.csv")
+        df=pd.read_csv("diamond.csv")
         temp = df.to_dict('list')
         temp['Cut'] = list(set(temp['Cut']))
         temp['Color'] = list(set(temp['Color']))
