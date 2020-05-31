@@ -11,14 +11,29 @@ import joblib
 from joblib import load
 import streamlit as st
 import _pickle as pickle
+from pprint import pformat
 from pycaret.regression import *
-
+from PIL import Image
+import markdown
+ 
+    
 
 
 def main():
 
         """SAI ML App """
-        st.title("SAI ML APP")
+        image = Image.open('sai_app_header.png')
+        st.image(image,use_column_width=True)
+        with open("README.md", "r", encoding="utf-8") as input_file:
+           text = input_file.read()
+        intro_markdown=markdown.markdown(text)
+        st.markdown(intro_markdown, unsafe_allow_html=True)
+        
+        image_1 = Image.open('data_intro.png')
+        st.image(image_1,use_column_width=True)
+        
+        st.subheader("Click On Predict to know the Diamond Price (USD)")
+        
         import pandas as pd
         df=pd.read_csv("diamond.csv")
         temp = df.to_dict('list')
@@ -31,6 +46,7 @@ def main():
 
         temp_records = df.to_dict('records')
         
+        st.sidebar.markdown("## Select Metrics Below")
         #CARAT WEIGHT
         Carat_Weight_list = st.sidebar.number_input('Carat Weight')
         #Checkbox for CUT
