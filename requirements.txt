@@ -1,6 +1,6 @@
 pycaret==1.0.0
-joblib==0.14.1
+joblib
 streamlit
-cloudpickle==1.3.0
-pickleshare==0.7.5
-Markdown ==3.2.2
+cloudpickle
+pickleshare
+Markdown 
