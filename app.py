@@ -15,7 +15,6 @@ from pprint import pformat
 from pycaret.regression import *
 from PIL import Image
 import markdown
- 
     
 
 
