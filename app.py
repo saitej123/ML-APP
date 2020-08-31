@@ -68,7 +68,7 @@ def main():
         # store the inputs
         features = [Carat_Weight_list, CUT_list, Color_list,Clarity_list,Polish_list,Symmetry_list,Symmetry_list]
         
-        model=pycaret.classification.load_model('Sai_LGBM')
+        model=pycaret.regression.load_model('Sai_LGBM')
 
 
         if st.button('Predict'): # when the submit button is pressed
@@ -79,9 +79,7 @@ def main():
            st.balloons()
            st.success(f'Price is:  {pred}')
          
-       
-
-        
+              
         
      
 if __name__ == '__main__':
